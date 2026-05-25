@@ -20,7 +20,12 @@ export interface Session {
 }
 
 export type listingStatus = 'open' | 'closed' | 'deleted';
-export type ItemCondition = 'new'| 'like_new'| 'good'| 'fair'| 'poor';
+export type itemCondition = 'new'| 'like_new'| 'good'| 'fair'| 'poor';
+
+export type Bidder = {
+  userId: string,
+  bid: Number
+};
 
 export interface Listing {
   listingId: string;
@@ -30,11 +35,11 @@ export interface Listing {
   tags: string[]
   imageUrls: string[];
   expected_minimum_price: number;
-  current_highest_bid: number | null;
+  current_highest_bid: Bidder;
   return_refund_policy: string;
   status : listingStatus;
-  soldTo: string | null;
-  condition: string;
+  sold_to: string | null;
+  condition: itemCondition;
 }
 
 export interface Bid {
