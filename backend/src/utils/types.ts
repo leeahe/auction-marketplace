@@ -23,7 +23,7 @@ export type itemCondition = 'new'| 'like_new'| 'good'| 'fair'| 'poor';
 
 export type Bidder = {
   userId: string,
-  bid: Number
+  bid: number
 };
 
 export interface Listing {

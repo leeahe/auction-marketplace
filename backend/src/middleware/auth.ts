@@ -21,7 +21,7 @@ export const authenticateToken = (req : Request, res: Response, next: NextFuncti
     const decoded = jwt.verify(token, jwt_secret) as {userId: string}
     req.user = decoded.userId
     next()
-  } catch (e) {
+  } catch {
     // passes error
     next(new  NotAuthorisedError('Invalid or Empty Token'))
   }
