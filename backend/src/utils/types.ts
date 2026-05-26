@@ -9,13 +9,12 @@ export interface User {
   userName: string;
   email: string;
   hashedPassword: string;
-  address: string;
 }
 
 export interface Session {
   sessionId: string;
   userId: string;
-  TokenHash: string;
+  tokenHash: string;
   active: boolean;
 }
 

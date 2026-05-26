@@ -23,11 +23,6 @@ const UserSchema = new mongoose.Schema({
   hashedPassword: {
     type: String,
     required: true
-  },  
-  
-  address: {
-    type: String,
-    required: true
   }
 }, {timestamps: true})
 

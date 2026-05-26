@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
+import authroutes from './routes/AuthRoutes.js'
 
 dotenv.config()
 
@@ -18,7 +19,7 @@ app.use(cors())
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send(`<h1>Auction MarketPlace Server Running on port ${PORT}<h1>`)
+  res.send(`Auction MarketPlace Server Running on port ${PORT}`)
 }) 
 
 app.get('/health', (req, res) => {
@@ -26,6 +27,8 @@ app.get('/health', (req, res) => {
     message: 'Success'
   })
 })
+
+app.use('/v1/auth', authroutes)
 
 mongoose.connect(MONGO_DB_URI).then(() => {
   app.listen(PORT, () => {
