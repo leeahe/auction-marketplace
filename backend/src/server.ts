@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import authroutes from './routes/AuthRoutes.js'
+import { errorHandler } from './middleware/error.js'
 
 dotenv.config()
 
@@ -29,7 +30,7 @@ app.get('/health', (req, res) => {
 })
 
 app.use('/v1/auth', authroutes)
-
+app.use(errorHandler)
 mongoose.connect(MONGO_DB_URI).then(() => {
   app.listen(PORT, () => {
     console.log(`Auction MarketPlace Server Running on port ${PORT}`)
