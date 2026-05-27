@@ -23,3 +23,18 @@ Content-Type: application/json
 ###
 POST http://localhost:3000/v1/auth/logout
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE1NjNlMTI1ZTgwNTJiZGFiOWYzZTYiLCJpYXQiOjE3Nzk3OTU3MDl9.L3slKh0UY8jVZqoD8cxlC-Stcnu_iIyOlR8uPR1p-EA
+
+###
+PUT http://localhost:3000/v1/auth/change-password
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE1NjNlMTI1ZTgwNTJiZGFiOWYzZTYiLCJpYXQiOjE3Nzk4ODA0NzR9.yLqWCmBQ0iWnitsl89-bT7cI8IPq3FVmy4cEtc1hfOQ
+Content-Type: application/json
+
+{
+  "oldPassword": "Test1234",
+  "newPassword": "Password123"
+}
+
+###
+GET http://localhost:3000/v1/auth/get-user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTE1NjNlMTI1ZTgwNTJiZGFiOWYzZTYiLCJpYXQiOjE3Nzk4ODA0NzR9.yLqWCmBQ0iWnitsl89-bT7cI8IPq3FVmy4cEtc1hfOQ
+Content-Type: application/json

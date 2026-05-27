@@ -4,3 +4,4 @@ export const extractToken = (header: string | undefined) => {
   }
   return header.split(' ')[1]
 }
+
